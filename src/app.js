@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 
-const app = express()
+const app = express( )
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
@@ -13,11 +13,9 @@ app.use(express.json({limit: "16kb"})) //if someone is sharing json
 app.use(express.urlencoded({extended: true, limit: "16kb"})) // for url sharing
 app.use(express.static("public")) // for extra things like photo etc gets stored in local file public
 
-
+app.use(cookieParser())
 app.get("/",(req,res)=>{ //actually (err,req,res,next) next is for middlewares
-    res.send("Hello world!")
+    res.send("Helloooo world!")
 })
 
-app.use(cookieParser())
-
-export { app }
+export { app }  
