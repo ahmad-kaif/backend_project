@@ -12,10 +12,16 @@ app.use(cors({
 app.use(express.json({limit: "16kb"})) //if someone is sharing json 
 app.use(express.urlencoded({extended: true, limit: "16kb"})) // for url sharing
 app.use(express.static("public")) // for extra things like photo etc gets stored in local file public
-
 app.use(cookieParser())
-app.get("/",(req,res)=>{ //actually (err,req,res,next) next is for middlewares
-    res.send("Helloooo world!")
-})
+
+//routes import
+import userRouter from './routes/user.routes.js'
+
+
+//routes declaration
+// app.use("/users", userRouter)
+app.use("/api/v1/users", userRouter)
+
+// https://localhost:800/api/v1/users/register
 
 export { app }  
