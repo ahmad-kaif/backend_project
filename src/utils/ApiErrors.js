@@ -1,3 +1,6 @@
+//The ApiError class is a custom error class designed to handle API errors in a consistent way. It extends the built-in Error class and adds additional properties that are useful for handling errors in an API context.
+
+
 class ApiError extends Error{
     constructor(
         statusCode,
@@ -19,4 +22,4 @@ class ApiError extends Error{
         }
     }
 }
-export {ApiError} 
+export { ApiError } 
